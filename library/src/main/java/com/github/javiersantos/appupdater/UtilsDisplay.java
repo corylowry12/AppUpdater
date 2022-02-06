@@ -7,20 +7,21 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.media.RingtoneManager;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.NotificationCompat;
-import android.support.v7.app.AlertDialog;
 import android.view.View;
 
+import androidx.appcompat.app.AlertDialog;
+import androidx.core.app.NotificationCompat;
+
 import com.github.javiersantos.appupdater.enums.UpdateFrom;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.net.URL;
 
 class UtilsDisplay {
 
-    static AlertDialog showUpdateAvailableDialog(final Context context, String title, String content, String btnNegative, String btnPositive, String btnNeutral, final DialogInterface.OnClickListener updateClickListener, final DialogInterface.OnClickListener dismissClickListener, final DialogInterface.OnClickListener disableClickListener) {
-        return new AlertDialog.Builder(context)
-                .setTitle(title)
+    static androidx.appcompat.app.AlertDialog showUpdateAvailableDialog(final Context context, String title, String content, String btnNegative, String btnPositive, String btnNeutral, final DialogInterface.OnClickListener updateClickListener, final DialogInterface.OnClickListener dismissClickListener, final DialogInterface.OnClickListener disableClickListener) {
+        return new MaterialAlertDialogBuilder(context)
                 .setMessage(content)
                 .setPositiveButton(btnPositive, updateClickListener)
                 .setNegativeButton(btnNegative, dismissClickListener)
@@ -28,7 +29,7 @@ class UtilsDisplay {
     }
 
     static AlertDialog showUpdateNotAvailableDialog(final Context context, String title, String content) {
-        return new AlertDialog.Builder(context)
+        return new MaterialAlertDialogBuilder(context)
                 .setTitle(title)
                 .setMessage(content)
                 .setPositiveButton(context.getResources().getString(android.R.string.ok), new DialogInterface.OnClickListener() {
