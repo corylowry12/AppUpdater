@@ -12,6 +12,7 @@ import android.view.View;
 import androidx.appcompat.app.AlertDialog;
 import androidx.core.app.NotificationCompat;
 
+import com.github.corylowry12.appupdater.R;
 import com.github.javiersantos.appupdater.enums.UpdateFrom;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.snackbar.Snackbar;
